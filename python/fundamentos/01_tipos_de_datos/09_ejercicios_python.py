@@ -156,7 +156,17 @@ def buscadorElemento():
 
 # 13. Simulación de Inventario
 # Crea dos arreglos: uno para nombres_productos y otro para precios. Permite al usuario ingresar 3 productos con sus precios. Luego, muestra una lista formateada: Producto: [Nombre] - Precio: $[Valor].
-
+def Inventario():
+    nombres_productos = []
+    precios = []
+    for i in range(3):
+        nombre = input("Nombre del producto:")
+        precio = float(input("Precio: "))
+        nombres_productos.append(nombre)
+        precio.append(precio)
+    print("\nInventario:")
+    for i in range(3):
+        print(f"Producto: {nombres_productos[i]} - precio {precios[i]}")
 
 # 14. Generador de Lista de Compras
 # Usa un bucle while para que el usuario agregue artículos a una lista de compras. El proceso termina cuando el usuario escribe "terminar". Al final, muestra la lista ordenada alfabéticamente.
