@@ -1,252 +1,246 @@
-# 1. Números Pares Dinámicos
-# Desarrolla un programa que solicite al usuario cuántos números pares desea ver ($n$). El programa debe imprimir los primeros $n$ números pares positivos.
-
-def numerosDinamicos():
+#Ejercicio N°1
+def ejercicio1():
     n = int(input("¿Cuantos números deseas ver?: "))
     pares = []
-    for i in range (1, (n * 2) + 1):
-      if  i % 2 == 0:
-           pares.append(i)
-      print (f"Mostrando pares: {pares}")     
+    for i in range(1, ( n * 2 )+ 1):
+        if i % 2 == 0:
+            pares.append(i)
+    print(f"Mostrando pares: {pares}")
 
-# 2. Verificador de Edad y Acceso
-# Pide al usuario su año de nacimiento. Calcula su edad y muestra si es mayor de edad (18+). Si tiene menos de 18, indica cuántos años le faltan para la mayoría de edad.
-
-def verificardor_edad():
-   campo = input("Ingrese su año de nacimiento: ")
-   edad = 2026 - int(campo)
-   if campo == "":
-       print("Error")
-   elif edad >= 18:
-      print(f"Acceso ya que ustedes tiene {edad}")
-   elif edad > 0 and edad < 18:
-       print(f"No tiner acceso: te faltan: {18 - edad} años.")   
-   else:
-       print("No tiene acceso") 
-verificardor_edad()         
-
-
-
-# 3. Calculadora de Descuentos
-# Solicita el precio de un producto y la cantidad comprada. Si el total supera los $100, aplica un 15% de descuento. Muestra el subtotal, el descuento aplicado y el total final.
-def aplicarDescuento():
-    precio = float(input("Ingrese el precio del producto: "))
-    cantidad = int(input("Ingrese la cantidad comprada: "))
-    producto = precio * cantidad
-    if producto > 100:
-        descuento = producto * 0.15
-        total = producto - descuento
+#Ejercicio N°2
+def ejercicio2():
+    edad = int(input("Ingresa tu edad: "))
+    if edad > 17:
+        print("Eres mayor de edad. ")
     else:
-        total = producto
-        print(f"Subtotal: ${producto:.2f}")
-    if producto > 100:
-        print(f"Descuento aplicado: ${descuento:.2f}")
-        print(f"Total: ${total:.2f}")
+        print("Eres menor de edad")
 
-# 4. Clasificador de Números
-# Pide un número al usuario e indica si es: Positivo-Par, Positivo-Impar, Negativo-Par, Negativo-Impar o Cero.
-# II. Iteraciones y Bucles (Intermedio)
-def clasificadorNumeros():
-    num = int(input("Ingrese un número: "))
-    if num > 0:
-        if num % 2 == 0:
-            print("Positivo_Par")
-        elif num % 2 == 1: 
-            print("Positivo-Impar")
-    elif num % 2 == 0:
-        print("Negativo-Par")
-    else:
-        print("Es 0")
-        
+#Ejercicio N°3
+def ejercicio3():
+    descuento = 0
+    total = 0
+    pagar = int(input("Ingresa el valor del producto: "))
+    cantidad = int(input("Ingresa la cantidad: "))
+    pagar = pagar * cantidad
+    if pagar >= 100:
+        total = pagar * 0.85
+        descuento = pagar * 0.15
+        print(f"subTotal: {pagar}\ndescuento: -{descuento}\nTotal: {total}")
+    else :
+        print(f"total a pagar: {pagar}")
 
-# 5. Tabla de Multiplicar Personalizada
-# Solicita un número entero y muestra su tabla de multiplicar del 1 al 12, pero solo muestra los resultados que sean múltiplos de 3.
+#Ejercicio N°4
+def ejercicio4():
+    n = int(input("Ingrsa un número: "))
+    if n > 0:
+        if n % 2 == 0:
+            print("El número ingresado es positivo-par")
+        else:
+            print("El número ingresado es positivo-impar")
+    elif n < 0:
+        if n  % 2 == 0:
+            print("El número ingresado es negativo-par")
+        else:
+            print("El número ingresado es negativo-impar")
+    else: 
+        print("El número ingresado es cero")
 
-def tablaMultiplicar():
-    num = int(input("Ingresar número a trabajar: "))
+#Ejercicio N°5
+def ejercicio5():
+    n = int(input("Ingresa un número: "))
     for i in range(1, 13):
-        resultado = num * i
+        resultado = n * i
         if resultado % 3 == 0:
-            print(f"Del {num} solo estos número son divisibles por 3: {resultado}") 
-            
+            print(f"del {n} solo estos números son divisibles por 3: {resultado}")
 
-# 6. Sumatoria con Centinela
-# Crea un programa que pida números continuamente y los sume. El ciclo debe terminar cuando el usuario ingrese un número negativo. Al final, muestra la suma total (sin incluir el negativo).
-
-
-# 7. Contador de Vocales
-# Pide al usuario una frase o palabra. Utiliza un bucle para recorrer la cadena y contar cuántas vocales tiene en total.
-def contadorVocales():
-    texto = input("Ingrese una palabra o frase: ")
-    vocales = 0
-    for i in range(len(texto)):
-        # Repetir la condicion con cada vocal
-        if texto[1] == "a" or texto[1] == "o" or texto[1] == "i" or texto[1] ==
-        vocales += 1
-        #Mismo de arriba pero con las vocales con tilde
-        elif texto[i] == "á" or texto[1] == "ó" or texto[i] == "í" or texto[1]
-        vocales += 1
-    print(f"La cadena '{texto}' tiene {vocales} vocales en total")
-
-# 8. Validación de Contraseña
-# Define una contraseña en una variable. Pide al usuario que la intente adivinar. Tienes un máximo de 3 intentos; si falla los 3, bloquea el acceso.
-# III. Manejo de Arreglos / Listas (Avanzado)
-def validacion():
-    con = 12345678
-    intentos === con:
+#Ejercicio N°6
+def ejercicio6():
+    suma = 0
     while True:
-        ingresa = int("Ingresa la contraseña: ")
+        numero = int(input("Ingresa un número: "))
+        if numero < 0:
+            break
+        suma += numero 
+    print(f"La suma total es: {suma}")
+
+#Ejercicio N°7
+def ejercicio7():
+    pal = input("Ingresa una frase o palabra: ")
+    voc = 0
+    for i in pal.lower():
+        if i in "aeiouáéíóú":
+            voc += 1
+    print(f"En tu frase/palabra hay {voc} vocales.")
+
+#Ejercicio N°8
+def ejercicio8():
+    con = "12345678"
+    intentos = 1
+    while True:
+        ingresa = input("Ingresa la contraseña: ")
         if ingresa == con:
-            print("acesso concedido")
+            print("Acceso concedido")
             break
         else:
-        intentos += 1
-        if intentos > i:
-            print("Acceso denegado")
+            intentos += 1
+            if intentos > 3:
+                print("Acceso denegado.")
+                break
+            else:
+                print(f"Numeros de intentos: {intentos}")
+
+#Ejercicio N°9
+def ejercicio9():
+    arr = []
+    nombreTotal = 0
+    while True:
+        ingresar = input("Ingresa 5 nombres: ")
+        arr.append(ingresar)
+        nombreTotal += 1
+        if nombreTotal >= 5:
+            arr = arr[::-1]
+            print(arr)
             break
-        else:
-            print(f"Numeros de intentos: {intentos}")
-        
 
-# 9. Registro de Nombres
-# Crea un arreglo vacío. Pide al usuario que ingrese 5 nombres. Guárdalos en el arreglo y, al final, imprímelos en orden inverso al que fueron ingresados.
-
-
-# 10. Promedio de Notas
-# Solicita al usuario cuántas notas desea ingresar. Almacena cada nota en un arreglo. Al finalizar, calcula y muestra el promedio, la nota más alta y la más baja.
+#Ejercicio N°10
 def ejercicio10():
-    cantidad = int(input("¿Cuantas notas deseas ingresar?: "))
+    cantidad = int(input("¿Cuántas notas deseas ingresar?: "))
     notas = []
     for i in range(cantidad):
-        nota = float(input(f"Ingrese la nota {i+1}: "))
-        notas.append(notas)
-    promedio = sum(notas) / cantidad
-    nota_max = max(notas)
-    nota_min = min(notas)
-    print("\nResultados: ")
-    print(f"Promedio {promedio:.2f}")
-    print(f"Nota mas alta:  {nota_max}")
-    print(f"Nota mas baja {nota_min}")
+        nota = float(input(f"nota {i+1}: "))
+        notas.append(nota)
+    promedio = sum(notas) / len(notas)
+    print("\nResultados:")
+    print(f"Promedio: {promedio}")
+    print(f"Nota más alta: {max(notas)}")
+    print(f"Nota más baja: {min(notas)}")
 
-# 11. Filtro de Arreglos
-# Dado un arreglo de números generado por el usuario, crea un nuevo arreglo que contenga solo los números que sean mayores a 50. Muestra ambos arreglos.
-def filtroArreglo():
-    cantidad = int(input("¿Cuantos nuemros deseas ingresar?: "))
+#Ejercicio N°11
+def ejercicio11():
+    cantidad = int(input("Cuantos números desea ingresar: "))
     mayor50 = []
     nUser = []
     for i in range(1, cantidad + 1):
-        arrayUsuario = int(input("Ingrese un numero: "))
+        arrayUsuario = int(input("Ingrese número: "))
         if arrayUsuario > 50:
             mayor50.append(arrayUsuario)
         else:
             nUser.append(arrayUsuario)
-        print(f"Valores ingresador por el usuario: {nUser} \nValores mayor a 50: {mayor50}")
+    print(f"Valores ingresados por el usuario: {nUser} \nValores mayores a 50: {mayor50}")
 
-# 12. Buscador de Elementos
-# Crea una lista de 10 ciudades. Pide al usuario que ingrese el nombre de una ciudad y el programa debe decir si la ciudad se encuentra en la lista y en qué índice (posición) está.
-# IV. Retos de Lógica Combinada
-def buscadorElemento():
-    ciudades = ["Nairobi", "Tokio", "Santiago", "Lima", "Caracas", "Rio", "Berlin", "Seul", "Buenos aires", "Barcelona"]
-    ciudad = input("Ingresar ciudad (con mayuscula al principio): ")
-    esta = ciudades.index(ciudad)
-    if esta < len(ciudades):
-        print(f"Tu ciudad esta en el arreglo, en la posicion {esta}")
+#Ejercicio N°12
+def ejercicio12():
+    ciudades = ["santiago", "valparaíso", "concepción", "la serena", "antofagasta","temuco", "iquique", "puerto montt", "arica", "punta arenas"]
+    buscar = input("Ingrese una ciudad: ")
+    if buscar in ciudades:
+        print(f"La ciudad está en la lista, en la posición {ciudades.index(buscar)}")
     else:
-        print("Tu ciudad no esta en el arreglo")
+        print("La ciudad no se encuentra en la lista")
 
-# 13. Simulación de Inventario
-# Crea dos arreglos: uno para nombres_productos y otro para precios. Permite al usuario ingresar 3 productos con sus precios. Luego, muestra una lista formateada: Producto: [Nombre] - Precio: $[Valor].
-def Inventario():
-    nombres_productos = []
-    precios = []
+#Ejercicio N°13
+def ejercicio13():
+    pro = []
+    pre = []
     for i in range(3):
-        nombre = input("Nombre del producto:")
-        precio = float(input("Precio: "))
-        nombres_productos.append(nombre)
-        precio.append(precio)
-    print("\nInventario:")
+        nom = input("Nombre del producto: ")
+        pres = int(input("Precio: "))
+        pro.append(nom)
+        pre.append(pres)
+    print("\nInvetario:")
     for i in range(3):
-        print(f"Producto: {nombres_productos[i]} - precio {precios[i]}")
+        print(f"Producto: {pro[i]} - Precio: {pre[i]}")
 
-# 14. Generador de Lista de Compras
-# Usa un bucle while para que el usuario agregue artículos a una lista de compras. El proceso termina cuando el usuario escribe "terminar". Al final, muestra la lista ordenada alfabéticamente.
+#Ejercicio N°14
+def ejercicio14():
+    lista = []
+    while True: 
+        item = input("Agrega un articulo (Ingresa `terminar` para finalizar): ")
+        if item.lower() == "terminar":
+            break
+        lista.append(item)
+    lista.sort()
+    print(f"Lista ordenada: {lista}")
 
+#Ejercicio N°15
+def ejercicio15():
+    dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
+    temps = []
+    for dia in dias:
+        temp = int(input(f"Temperatura del {dia}: "))
+        temps.append(temp)
+    promedio = sum(temps) / len(temps)
+    mayores_25 = len([t for t in temps if t > 25])
+    min_temp = min(temps)
+    dia_min = dias[temps.index(min_temp)]
 
-# 15. Análisis de Temperaturas
-# Solicita las temperaturas de los 7 días de la semana y guárdalas en un arreglo. Muestra:
-# El promedio semanal.
-# Cuántos días la temperatura fue superior a 25 grados.
-# El día con la temperatura más baja (asumiendo que el índice 0 es Lunes).
+    print(f"Promedio semanal: {promedio}")
+    print(f"Dias sobre 25°: {mayores_25}")
+    print(f"Dia mas frio: {dia_min} ({min_temp}°C)") 
 
 continuar = True
 while continuar:
-    print("\n --- ejercicio 1 Python---")
-    print(" ---1 ejercicio 1 ---")
-    print(" ---2 ejercicio 2 ---")    
-    print(" ---3 ejercicio 3 ---")
-    print(" ---4 ejercicio 4 ---")
-    print(" ---5 ejercicio 5 ---")
-    print(" ---6 ejercicio 6 ---")
-    print(" ---7 ejercicio 7 ---")
-    print(" ---8 ejercicio 8 ---")
-    print(" ---9 ejercicio 9 ---")
-    print(" ---10 ejercicio 10 ---")
-    print(" ---11 ejercicio 11 ---")
-    print(" ---12 ejercicio 12 ---")
-    print(" ---13 ejercicio 13 ---")
-    print(" ---14 ejercicio 14 ---")
-    print(" ---15 ejercicio 15 ---")
-    opcion = input("\n---- Elige una opción (1-15) o '(0 para salir)= ")
+    print("\n ejercicio python: ")
+    print("--- 1.- Ejercicio  1 ---:")
+    print("--- 2.- Ejercicio  2 ---:")
+    print("--- 3.- Ejercicio  3 ---:")
+    print("--- 4.- Ejercicio  4 ---:")
+    print("--- 5.- Ejercicio  5 ---:")
+    print("--- 6.- Ejercicio  6 ---:")
+    print("--- 7.- Ejercicio  7 ---:")
+    print("--- 8.- Ejercicio  8 ---:")
+    print("--- 9.- Ejercicio  9 ---:")
+    print("--- 10.- Ejercicio  10: ---")
+    print("--- 11.- Ejercicio  11: ---")
+    print("--- 12.- Ejercicio  12: ---")
+    print("--- 13.- Ejercicio  13: ---")
+    print("--- 14.- Ejercicio  14: ---")
+    print("--- 15.- Ejercicio  15: ---")
+    opcion = input("\n--- Elige una opción: (1:15) (0 para salir)")
     if opcion == "1":
         print("\nEjecutando ejercicio 1: ")
-        print(numerosDinamicos())
+        ejercicio1()
     elif opcion == "2":
         print("\nEjecutando ejercicio 2: ")
-        print(verificardor_edad())
+        ejercicio2()
     elif opcion == "3":
         print("\nEjecutando ejercicio 3: ")
-        print(aplicarDescuento())
+        ejercicio3()
     elif opcion == "4":
         print("\nEjecutando ejercicio 4: ")
-        print(clasificadorNumeros())
+        ejercicio4()
     elif opcion == "5":
         print("\nEjecutando ejercicio 5: ")
-        print(tablaMultiplicar())
-
+        ejercicio5()
     elif opcion == "6":
         print("\nEjecutando ejercicio 6: ")
-        print(verificardor_edad())
+        ejercicio6()
     elif opcion == "7":
         print("\nEjecutando ejercicio 7: ")
-        print(verificardor_edad())
+        ejercicio7()
     elif opcion == "8":
         print("\nEjecutando ejercicio 8: ")
-        print(verificardor_edad())
+        ejercicio8()
     elif opcion == "9":
         print("\nEjecutando ejercicio 9: ")
-        print(verificardor_edad())
+        ejercicio9()
     elif opcion == "10":
         print("\nEjecutando ejercicio 10: ")
-        print(verificardor_edad())
+        ejercicio10()
     elif opcion == "11":
         print("\nEjecutando ejercicio 11: ")
-        print(verificardor_edad())
+        ejercicio11()
     elif opcion == "12":
         print("\nEjecutando ejercicio 12: ")
-        print(verificardor_edad())
+        ejercicio12()
     elif opcion == "13":
         print("\nEjecutando ejercicio 13: ")
-        print(verificardor_edad())
+        ejercicio13()
     elif opcion == "14":
         print("\nEjecutando ejercicio 14: ")
-        print(verificardor_edad())
+        ejercicio14()
     elif opcion == "15":
         print("\nEjecutando ejercicio 15: ")
-        print(verificardor_edad())
-
-
+        ejercicio15()
     elif opcion == "0":
-        print("Saliendo...") 
+        print("Saliendo...")
         continuar = False
-    else:
-        print("Opción no válida, intenta otra vez")
