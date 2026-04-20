@@ -43,8 +43,8 @@ usando ejemplos inspirados en videojuegos y situaciones atractivas.
 # 5. Retroceso temporal
 # Desde 2024, retrocede de 3 en 3 hasta 0 o menos.
 # Imprime cada valor en la cuenta regresiva.
-# (for año in range(2024, -1, -3):
-#    print(f"Año: {año}"))
+# (for anio in range(2024, -1, -3):
+#    print(f"Año: {anio}"))
 
 
 # 6. Contador dinámico
