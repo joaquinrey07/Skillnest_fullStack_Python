@@ -56,10 +56,8 @@ def valores_multiplicados_segundo(lista):
 def ejercicio4():
     resultado4 = valores_multiplicados_segundo([100, 3, 50, 20])
     print(resultado4)
-# Imprime: 4 y retorna: [300, 9, 150, 60]
     print()
     print(valores_multiplicados_segundo([100]))
-# Imprime: 1 y retorna: []
 
 #Ejercicio 5
 # Genera precio fijo
