@@ -14,7 +14,7 @@ streamers[0]["nombre"] = "EliteGamerX"
 print(streamers)
 
 def obtener_valores(clave, lista):
-    for diccionario in lista:
+    for diccionario in streamers:
         print(diccionario[clave])
     print()
 obtener_valores("nombre", streamers)
