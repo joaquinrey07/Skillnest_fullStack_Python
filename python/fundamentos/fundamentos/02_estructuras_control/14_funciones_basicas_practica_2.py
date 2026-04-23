@@ -57,7 +57,8 @@ def ejercicio4():
     resultado4 = valores_multiplicados_segundo([100, 3, 50, 20])
     print(resultado4)
     print()
-    print(valores_multiplicados_segundo([100]))
+    resultado5 = print(valores_multiplicados_segundo([100]))
+    print(resultado5)
 
 #Ejercicio 5
 # Genera precio fijo
