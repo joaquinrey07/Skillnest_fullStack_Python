@@ -12,8 +12,17 @@ def mostrar_calificacion(datos):
 
 mostrar_calificacion(datos)
 
-def nombre_puntaje():
-   pass
+
+def obtener_valores(clave, lista):
+    for diccionario in datos:
+        print(diccionario[clave])
+obtener_valores("nombre" ,datos)
+
+def obtener_valores(clave, lista):
+    for diccionario in datos:
+        print(diccionario[clave])
+obtener_valores("puntaje" ,datos)
+
 
 
 # 1. Cambiar el puntaje de Pedro a 75
