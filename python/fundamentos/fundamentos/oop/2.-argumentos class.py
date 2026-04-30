@@ -23,3 +23,15 @@ Crear una clase Estudiante, y asignarle los siguientes atributos:
 - Crear 3 instancias para la clase con distintos estudiantes
 - Imprimir el nombre y apellido concatenado + especialidad
 '''
+
+class Estudiante:
+    def __init__(self, rut, nombre, apellido, especialidad, fecha_nac):
+       self.nombre = nombre
+       self.apellido = apellido
+       self.rut = rut
+       self.especialidad = especialidad
+       self.fecha_nac = fecha_nac
+
+Joaquin = Estudiante("22.487.994-3", "Joaquin", "Perez", "Programacion", "01-09-2008")
+Mauricio = Estudiante("22.430.771-3", "Mauricio", "Flores", "Programacion", "18-05-2008")
+Dany = Estudiante("20.552.380-2", "Dany", "Hernandez", "Programacion", "01-009-1990")
