@@ -93,33 +93,76 @@ def ejercicio4():
 ejercicio4()
 
 # 5. Crear una función que reciba una lista de precios de productos y aplique un descuento del 10%, mostrando el valor original y el nuevo valor.
-def calcular_precio_con_descuento(precio):
-    pass
+def descuento(valor):
+    sumaLista = sum(valor)
+    precioInicial = sumaLista
+    descuento = sumaLista * 0.1
+    precioFinal = precioInicial = descuento
+    print(f"El precio inicial del procucto es: \n{precioInicial}ny con descuento \n{precioFinal}")
+
+def valores():
+    cantidadProductos = int(input("Ingrese la cantidad de productos que quiere:\n"))
+    listasPrecio = []
+    for i in range(cantidadProductos):
+        valorProducto = float(input("Ingrese el valor del producto:\n"))
 
 
 def aplicar_descuento(precios):
     pass
+    
 
 # 6. Crear una función que reciba un número entero y determine si es par o impar.
-def es_par(numero):
-    pass
+def parImpar(numero):
+    if numero % 2 == 0:
+        print(f"El numero {numero} es par. ")
+    elif numero % 3 == 0:
+        print(f"El numero {numero} es impar")
+    else:
+        print("Error")
 
-
-def es_par_impar(numero):
-    pass
+def recibirNum(numero):
+    num = int(input("Ingrese un numero: "))
+    parImpar(num)
+recibirNum()
 
 # 7. Crear una función que reciba una lista de edades y muestre cuántas personas son mayores de edad (18 años o más).
-def es_mayor_edad(edad):
-    pass
+def edades(lista):
+    num = 0
+    for i in range(len(lista)):
+        if lista[i] >= 10:
+            num += 1
+    return num
 
+def personas():
+    edad = []
+    inp = int(input("Cuantos personas vas a ingresar hoy?"))
+    for i in range(inp):
+        var = int(input(">> "))
+        if var != "":
+            edad.append()
+        else:
+            print("Por favor ingresar valor valido")
+    resultado = edades(edad)
+    print(f"Hay {resultado} personas mayores de edad")
+personas()
 
-def contar_mayores_edad(edades):
-    pass
 
 # 8. Crear una función que reciba una lista de palabras y permita buscar cuántas veces aparece una palabra específica ingresada por el usuario.
-def palabra_coincide(palabra, palabra_buscar):
-    pass
+def palabra_coincide(palabra):
+    buscar = input("Ingrese la palabra que desea buscar: ")
+    vecesqAparece = 0
+    for i in range(len(palabra)):
+        if buscar == palabra[i]:
+            vecesAparece += 1
+    print(f"La palabra {buscar} aparece {vecesqAparece} en la lista. ")
 
+def recibirpalabras():
+    cantidad = int(input("Ingrese la cantidad de palabra: "))
+    listaPalabras = []
+    for i in range(cantidad):
+        palabra = input(f"{i + 1}. ")
+        listaPalabras.append(palabra)
+    palabra_coincide(listaPalabras)
 
 def contar_palabra(palabras, palabra_buscar):
     pass
