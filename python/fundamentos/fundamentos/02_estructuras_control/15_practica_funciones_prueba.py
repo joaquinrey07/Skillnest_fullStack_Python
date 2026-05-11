@@ -55,15 +55,16 @@ def filtrar(lista):
 def mostrar():
     nombres = []
     nombresLargos = []
-    cantidad = int(input("¿Cuantos nonbres quieres ingresar?"))
+    cantidad = int(input("¿Cuantos nombres quieres ingresar?"))
 
     for i in range(cantidad):
         nombre = input("Ingrese un nombre: ")
-        print(f"{nombre} agregado con extio a la lista.")
+        print(f"{nombre} agregado con exito a la lista.")
         nombres.append(nombre)
 
     listaNombre = filtrar(nombres)
-    print(f"Los nombre scon mas de 5 letras son: \n {("\n- ").join(listaNombre)} ")
+    print(f"Los nombre son mas de 5 letras son: \n {("\n- ").join(listaNombre)} ")
+
 
 
 
