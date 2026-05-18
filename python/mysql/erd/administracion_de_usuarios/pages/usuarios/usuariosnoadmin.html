@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de usuarios</title>
+    <link rel="stylesheet" href="styleusuarios.css">
+</head>
+
+<body>
+    <div class="content">
+
+        <div class="top-actions">
+            <button class="btn" onclick="nuevoUsuario()">
+                Nuevo Usuario
+            </button>
+        </div>
+
+        <!-- TABLA -->
+        <table id="tablaUsuarios">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>E-mail</th>
+                    <th>Tipo Usuario</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Patricia</td>
+                    <td>patricia@codingdojo.com</td>
+                    <td>Admin</td>
+                    <td>
+                        <div class="actions">
+                            <span class="action-btn">✉</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Andrea</td>
+                    <td>andrea@codingdojo.com</td>
+                    <td>Usuario</td>
+                    <td>
+                        <div class="actions">
+                            <span class="action-btn">✉</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Katya</td>
+                    <td>katya@codingdojo.com</td>
+                    <td>Usuario</td>
+                    <td>
+                        <div class="actions">
+                            <span class="action-btn">✉</span>
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</body>
+
+</html>
