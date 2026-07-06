@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar usuario</title>
+   <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+  <div class="contenedor">
+
+    <h1>Editar Usuario</h1>
+
+    <form class="formulario">
+
+      <div class="fila">
+        <label>Nombre</label>
+        <input type="text" value="Patricia">
+      </div>
+
+      <div class="fila">
+        <label>E-mail</label>
+        <input type="email" value="patricia@codingdojo.com">
+      </div>
+
+      <div class="fila">
+        <label>Contraseña</label>
+        <input type="password" value="123456789">
+      </div>
+
+      <div class="fila">
+        <label>Conf. Contraseña</label>
+        <input type="password" value="123456789">
+      </div>
+
+      <div class="fila">
+        <label>Tipo de Usuario</label>
+        <select>
+          <option selected>Administrador</option>
+          <option>Usuario</option>
+        </select>
+      </div>
+
+      <button class="btn">Crear</button>
+
+    </form>
+
+  </div>
+</body>
+
+</html>
