@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Error</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="error">
+
+    <h1>404</h1>
+
+    <h2>Pokémon no encontrado</h2>
+
+    <p>{{ mensaje }}</p>
+
+    <a href="/pokemon">Volver a la Pokédex</a>
+
+</div>
+
+</body>
+
+</html>
