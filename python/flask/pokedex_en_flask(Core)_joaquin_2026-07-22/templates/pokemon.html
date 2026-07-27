@@ -3,38 +3,110 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Pokédex</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex - {{ titulo }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
+    <header class="header">
+        <h1>Pokedex</h1>
+        <p class="subtitulo">{{ titulo }}</p>
+        <nav class="nav-botones">
+            <a href="{{ url_for('ver_pokedex_completa') }}" class="btn btn-azul">
+                Ver todos
+            </a>
 
-<h1>Pokédex</h1>
+            <a href="{{ url_for('ver_primeros_pokemon', cantidad=5) }}" class="btn btn-verde">
+                Ver 5 primeros
+            </a>
+        </nav>
+    </header>
 
-<div class="contenedor">
+    <main class="galeria-pokemon">
 
-{% for pokemon in pokemones %}
+        {% for p in pokemones %}
 
-<div class="card">
+        <div class="carta-pokemon">
 
-    <h2>#{{ pokemon.id }} {{ pokemon.nombre }}</h2>
+            <div class="zona-imagen">
+                <span class="etiqueta-numero">#{{ p.id }}</span>
 
-    <img src="{{ url_for('static', filename='images/' + pokemon.imagen) }}"
-         alt="{{ pokemon.nombre }}">
+                <img src="{{ url_for('static', filename='images/' ~ p.imagen) }}" alt="{{ p.nombre }}">
+            </div>
+            <div class="info-pokemon">
 
-    <p><strong>Tipo:</strong> {{ pokemon.tipo }}</p>
+                <h2 class="nombre">{{ p.nombre }}</h2>
+                <div class="tipos">
 
-    <p><strong>HP:</strong> {{ pokemon.poder }}</p>
+                    {% for tipo in p.tipo.split('/') %}
 
-    <p><strong>Altura:</strong> {{ pokemon.altura }}</p>
+                    <span class="badge-tipo tipo-{{ tipo | slug }}">
+                        {{ tipo }}
+                    </span>
 
-    <p><strong>Peso:</strong> {{ pokemon.peso }}</p>
+                    {% endfor %}
 
-</div>
+                </div>
+                <div class="poder-seccion">
+                    <span class="poder-label">
+                        Poder
+                    </span>
+                    <div class="barra-fondo">
 
-{% endfor %}
+                        <div class="barra-relleno" style="width: {{ (p.poder / 200 * 100) | round(0, 'floor') }}%;">
+                        </div>
 
-</div>
+                    </div>
+                    <span class="poder-valor">
+                        {{ p.poder }}
+                    </span>
+
+                </div>
+                <div class="stats-fila">
+
+                    <div class="stat">
+
+                        <span class="stat-icono"></span>
+
+                        <span class="stat-label">
+                            Altura
+                        </span>
+
+                        <span class="stat-valor">
+                            {{ p.altura }}
+                        </span>
+
+                    </div>
+                    <div class="stat">
+
+                        <span class="stat-icono"></span>
+
+                        <span class="stat-label">
+                            Peso
+                        </span>
+
+                        <span class="stat-valor">
+                            {{ p.peso }}
+                        </span>
+
+                    </div>
+
+                </div>
+                <a href="{{ url_for('buscar_pokemon_id', numero=p.id) }}" class="boton-detalle">
+                    Ver detalles
+                </a>
+            </div>
+        </div>
+        {% else %}
+
+        <p class="lista-vacia">
+            No hay Pokemon para mostrar.
+        </p>
+
+        {% endfor %}
+    </main>
 
 </body>
+
 </html>
