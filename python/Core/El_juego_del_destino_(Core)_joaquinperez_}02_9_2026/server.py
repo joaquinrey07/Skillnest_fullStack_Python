@@ -2,10 +2,8 @@ from flask import Flask, render_template, request, session, redirect
 import random
 
 app = Flask(__name__)
-# Clave para manejar sesiones en Flask
 app.secret_key = "clave_secreta"
 
-# Mensajes de predicción principal (positivos y de mala suerte)
 MENSAJES_POSITIVOS = [
     "Encontrarás el verdadero amor en los próximos meses. Tu corazón se llenará de alegría.",
     "Grandes oportunidades vienen en camino. El universo conspira a tu favor.",
@@ -23,7 +21,6 @@ MENSAJES_NEGATIVOS = [
     "Algo no saldrá como lo planeaste, pero será una gran lección.",
 ]
 
-# Significados asociados a colores favoritos
 SIGNIFICADO_COLORES = {
     "rojo": ("pasión", "energía"),
     "azul": ("calma", "sabiduría"),
@@ -44,7 +41,6 @@ SIGNIFICADO_COLORES = {
     "turquesa": ("equilibrio", "renovación"),
 }
 
-# Pares de significado por defecto cuando el color/animal no está en el diccionario
 SIGNIFICADOS_GENERICOS = [
     ("originalidad", "misterio"),
     ("sensibilidad", "creatividad"),
@@ -52,7 +48,6 @@ SIGNIFICADOS_GENERICOS = [
     ("curiosidad", "aventura"),
 ]
 
-# Hex aproximado para pintar la muestra de color
 HEX_COLORES = {
     "rojo": "#e11d48",
     "azul": "#2563eb",
@@ -73,7 +68,6 @@ HEX_COLORES = {
     "turquesa": "#14b8a6",
 }
 
-# Significados asociados a animales favoritos
 SIGNIFICADO_ANIMALES = {
     "perro": ("lealtad", "compañerismo"),
     "gato": ("independencia", "misterio"),
@@ -97,7 +91,6 @@ SIGNIFICADO_ANIMALES = {
 
 
 def obtener_significado(valor, diccionario):
-    """Devuelve un par (rasgo1, rasgo2) para el color o animal ingresado."""
     clave = valor.strip().lower()
     if clave in diccionario:
         return diccionario[clave]
@@ -105,7 +98,6 @@ def obtener_significado(valor, diccionario):
 
 
 def obtener_mensaje_edad(edad_str):
-    """Genera un mensaje de predicción según el rango de edad."""
     try:
         edad = int(edad_str)
     except (ValueError, TypeError):
@@ -122,14 +114,11 @@ def obtener_mensaje_edad(edad_str):
     else:
         return f"A tus {edad} años, la calma y la experiencia son tu mayor tesoro para lo que viene."
 
-
-# Ruta principal que muestra el formulario para ingresar datos
 @app.route("/")
 def index():
     return render_template("index.html")
 
 
-# Ruta para procesar los datos del formulario y almacenarlos en sesión
 @app.route("/enviar", methods=["POST"])
 def enviar():
     nombre = request.form.get("nombre", "").strip()
@@ -137,7 +126,6 @@ def enviar():
     color = request.form.get("color", "").strip()
     animal = request.form.get("animal", "").strip()
 
-    # Guardamos los datos del usuario en la sesión
     session["nombre"] = nombre if nombre else "Viajero"
     session["edad"] = edad
     session["color"] = color if color else "morado"
@@ -146,7 +134,6 @@ def enviar():
     return redirect("/futuro")
 
 
-# Ruta para mostrar la predicción del futuro basada en los datos ingresados
 @app.route("/futuro")
 def futuro():
     nombre = session.get("nombre", "Viajero")
@@ -154,7 +141,6 @@ def futuro():
     color = session.get("color", "morado")
     animal = session.get("animal", "gato")
 
-    # Selección aleatoria entre mensaje positivo o de mala suerte
     if random.choice([True, False]):
         mensaje = random.choice(MENSAJES_POSITIVOS)
         tipo = "positivo"
