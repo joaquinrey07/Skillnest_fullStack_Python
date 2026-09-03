@@ -16,7 +16,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Fondo con puntos tipo estrellas / lunares, como en el diseño de referencia */
 .fondo-estrellas {
     position: fixed;
     inset: 0;
@@ -54,7 +53,6 @@ body {
     overflow: hidden;
 }
 
-/* Encabezado oscuro degradado, como en las capturas */
 .card-header {
     background: linear-gradient(160deg, #2a2a45 0%, #1c1c33 60%, #14142a 100%);
     padding: 32px 30px 26px;
@@ -147,7 +145,6 @@ body {
     color: #999;
 }
 
-/* Esfera decorativa tipo bola de cristal */
 .orbe-contenedor {
     display: flex;
     justify-content: center;
@@ -189,8 +186,6 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 10px 22px rgba(123, 47, 247, 0.4);
 }
-
-/* Página de resultado */
 .caja-prediccion {
     border-left: 4px solid #22c55e;
     background: #eefaf0;
