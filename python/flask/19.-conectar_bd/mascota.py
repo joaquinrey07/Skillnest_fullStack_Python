@@ -97,3 +97,63 @@ class Mascota:
         # --------------------------------------------------
 
         return mascotas
+
+
+    # ======================================================
+    # OBTENER UNA MASCOTA POR ID
+    # ======================================================
+
+    @classmethod
+    def get_by_id(cls, id):
+        """
+        Busca una mascota específica mediante su ID.
+
+        Retorna:
+            Un objeto Mascota si encuentra el registro.
+            None si no encuentra ninguna mascota.
+        """
+
+        # --------------------------------------------------
+        # Consulta SQL
+        # --------------------------------------------------
+
+        query = """
+            SELECT *
+            FROM mascotas
+            WHERE id = %(id)s;
+        """
+
+
+        # --------------------------------------------------
+        # Datos que se enviarán a la consulta
+        # --------------------------------------------------
+
+        data = {
+            "id": id
+        }
+
+
+        # --------------------------------------------------
+        # Ejecutar consulta
+        # --------------------------------------------------
+
+        resultado = connectToMySQL(
+            "primera_flask"
+        ).query_db(query, data)
+
+
+        # --------------------------------------------------
+        # Si encontramos una mascota,
+        # convertimos el diccionario en un objeto Mascota.
+        # --------------------------------------------------
+
+        if resultado:
+
+            return cls(resultado[0])
+
+
+        # --------------------------------------------------
+        # Si no existe la mascota
+        # --------------------------------------------------
+
+        return None
